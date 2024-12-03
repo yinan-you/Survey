@@ -56,5 +56,3 @@ def add_responses_csv(questions, data):
         responses = [input(f"{question}: ") for question in questions]
         writer.writerow(responses)        
     return
-
-print("hello world")
