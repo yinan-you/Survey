@@ -1,16 +1,13 @@
-<!DOCTYPE html> # nessecity
-<html> # need this
-  <head> # BEGIN HEAD THIS IS ALL META 
-    <meta charset="utf-8" /> # character set used in this doc
-    <meta name="viewport" content="width=device-width, initial-scale=1" /> # take up width of screen
+<!DOCTYPE html> 
+<html>
+  <head> 
+    <meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
 
 
-
-    # bootstrap- CSS framwork, all front end
-    # allow us to load without downloading custom CSS and javascript
     <link 
       rel="stylesheet" 
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" # CDN
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
@@ -18,27 +15,17 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
-    /> # two links for nice design
+    />
 
 
 
-    <title>{% block title %}Home{% endblock %}</title> # create a block
-    # Home is the 'template'
-    # We can write something else that will 'override' this 
+    <title>{% block title %}Home{% endblock %}</title>
 
-  </head> 
-
-
-##########################################################################################
+  </head>
 
 
   <body> 
 
-
-    # nav bar- from bootstrap
-    # something about collasping the nav bar?
-    # data toggle
-    # data target 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <button
         class="navbar-toggler"
@@ -46,16 +33,12 @@
         data-toggle="collapse"
         data-target="#navbar"
       >
-      # span tag- load an icon for us, if we press on the icon it will toggle the button
         <span class="navbar-toggler-icon"></span>
       </button>
-      # collapsable nav bar
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav">
-          {% if user.is_authenticated %}
           <a class="nav-item nav-link" id="home" href="/">Home</a>
           <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
-          {% endif %}
         </div>
       </div>
     </nav>
@@ -81,9 +64,6 @@
     <div class="container">{% block content %} {% endblock %}</div>
 
 
-
-    # We will load many displays that are not dynamic in the static folder
-    # using CSS framework bootstrap, and java
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -100,10 +80,6 @@
       crossorigin="anonymous"
     ></script>
 
-
-    # loading file in from static
-    # {{}} means we can write a python expression
-    # url_for is a python function that loads a link into our website?
     <script>
       type="text/javascript"
       src="{{ url_for('static', filename='index.js')}}"
