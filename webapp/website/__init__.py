@@ -5,8 +5,8 @@ def create_app():
     app.config['SECRET_KEY'] = 'peepeepoopoo'
 
     from .views import views
-    from.auth import auth
+    from .eoi import eoi
 
     app.register_blueprint(views, url_prefix='/')
-    app.register_blueprint(auth, url_prefix='/')
+    app.register_blueprint(eoi, url_prefix='/')
     return app
